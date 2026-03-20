@@ -1,91 +1,126 @@
-# Enhancing Loan Approval Accuracy through Ensemble-Based Machine Learning
+# 🏦 Enhancing Loan Approval Accuracy through Ensemble-Based Machine Learning
 
-## Overview
-This project aims to improve loan approval prediction using ensemble-based machine learning techniques. The study analyzes applicant data to build predictive models that assist financial institutions in making reliable and data-driven loan approval decisions. The work addresses real-world challenges such as missing values, noisy data, class imbalance, and model overfitting.
+[![Python](https://img.shields.io/badge/Python-3.8+-blue)](https://www.python.org/)
+[![Conference](https://img.shields.io/badge/Published-CSCT%202025%20%40%20NIT%20Sikkim-red)](https://scrs.in/conference/csct2025)
+[![Publisher](https://img.shields.io/badge/Publisher-Springer-brightgreen)](https://www.springer.com/)
+[![Models](https://img.shields.io/badge/Models-10%20Ensemble%20Algorithms-orange)](https://scikit-learn.org/)
+[![Best Accuracy](https://img.shields.io/badge/Best%20Accuracy-LightGBM%2089%25-success)]()
 
-## Objectives
-- Improve the accuracy of loan approval prediction.
-- Compare the performance of multiple ensemble learning models.
-- Address challenges including missing values, noisy data, and class imbalance.
-- Identify models that generalize well on unseen data.
+> **Research paper presented at the 4th Congress on Smart Computing Technologies (CSCT 2025)**
+> hosted by National Institute of Technology, Sikkim, India — December 13–14, 2025.
+> Published under Springer.
 
-## Dataset
-The dataset contains information about loan applicants including demographic, financial, and credit history attributes.
+*Authors: Mahamat Hanga Derio, Chaitra P C, Sujatha Arun Kokatnoor*
+*Christ University, Bangalore, India*
 
-Typical features include:
-- Applicant Income
-- Coapplicant Income
-- Loan Amount
-- Loan Term
-- Credit History
-- Education
-- Employment Status
-- Marital Status
-- Loan Approval Status (Target Variable)
+---
 
-## Data Preprocessing
-The following preprocessing steps were applied:
+## 📌 Research Objective
 
-- Removed irrelevant identifiers such as `Loan_ID`.
-- Handled missing values using appropriate imputation techniques.
-- Removed outliers using the Interquartile Range (IQR) method.
-- Encoded categorical variables using label encoding.
-- Cleaned noisy and inconsistent data.
+Loan approval decisions in financial institutions are often inconsistent, biased, or slow when
+handled manually. This study systematically benchmarks **10 ensemble machine learning algorithms**
+to identify the most accurate and reliable model for automated loan approval prediction —
+with implications for microfinance institutions in data-scarce economies.
 
-## Exploratory Data Analysis
-Exploratory Data Analysis was conducted to understand patterns in the dataset.
+---
 
-Key analyses included:
-- Bar charts to visualize distributions of categorical variables.
-- Heatmap to examine correlations between numerical features.
-- Identification of class imbalance in loan approval outcomes.
+## 📊 Dataset
 
-## Machine Learning Models
-Multiple ensemble learning models were implemented and compared:
+- **Source**: [Kaggle — Loan Status Prediction](https://www.kaggle.com/datasets/bhavikjikadara/loan-status-prediction)
+- **Features**: Gender, Marital Status, Dependents, Education, Employment, Income,
+  Co-applicant Income, Loan Amount, Loan Term, Credit History, Property Area
+- **Target**: Loan Status (Approved / Rejected)
+- **Preprocessing**: Mode imputation (categorical), median imputation (numerical),
+  IQR-based outlier removal, Label Encoding
 
-- Random Forest
-- Bagging Classifier
-- Extra Trees
-- AdaBoost
-- Gradient Boosting
-- XGBoost
-- LightGBM
-- CatBoost
-- Voting Classifier
-- Stacking Classifier
+---
 
-## Evaluation Metrics
-Model performance was evaluated using:
+## 🤖 Models Benchmarked (10 Algorithms)
 
-- Accuracy
-- Precision
-- Recall
-- F1 Score
+| Model | Accuracy |
+|-------|----------|
+| **LightGBM** | **89%** ✅ Best |
+| Random Forest | 88% |
+| CatBoost | 87% |
+| XGBoost | 86% |
+| Extra Trees | 86% |
+| AdaBoost | 85% |
+| Gradient Boosting | 84% |
+| Bagging Classifier | 84% |
+| Stacking Classifier | 82% |
+| Voting Classifier | 79% |
 
-These metrics provide a balanced evaluation for imbalanced classification problems.
+**Key finding**: Gradient boosting variants (LightGBM, CatBoost, XGBoost) consistently
+outperform bagging-based and meta-ensemble approaches on this tabular financial dataset.
+LightGBM's leaf-wise tree growth gives it an edge in handling the income skew and
+categorical feature interactions present in loan data.
 
-## Key Challenges Addressed
-This study focuses on addressing common issues in loan prediction systems:
+---
 
-- Missing data handling
-- Noisy and inconsistent data
-- Class imbalance
-- Overfitting in ensemble models
-- Improving model generalization
+## 🔬 Methodology
+```
+Raw Loan Dataset (Kaggle)
+    ↓
+Preprocessing — Imputation + Outlier Removal + Label Encoding
+    ↓
+Train/Test Split (80/20, random_state=42)
+    ↓
+Feature Importance Analysis (Random Forest)
+    ↓
+10 Ensemble Models Trained & Evaluated
+    ↓
+Accuracy + Confusion Matrix + Classification Report per model
+    ↓
+Final Comparison — Bar chart visualization
+```
 
-## Results
-Boosting-based ensemble models showed strong predictive performance. LightGBM and Random Forest achieved high accuracy and stable generalization compared to other models.
+---
 
-## Technologies Used
-- Python
-- Pandas
-- NumPy
-- Scikit-learn
-- XGBoost
-- LightGBM
-- CatBoost
-- Matplotlib
-- Seaborn
-- Jupyter Notebook
+## 📌 Key Features Used
 
-## Repository Structure
+Credit History emerged as the strongest predictor of loan approval, followed by
+Applicant Income and Loan Amount — consistent with lending theory and prior literature.
+
+---
+
+## 🚀 How to Run
+```bash
+# Clone
+git clone https://github.com/Derio001/loan-prediction-ensemble-models.git
+cd loan-prediction-ensemble-models
+
+# Install dependencies
+pip install pandas numpy matplotlib seaborn scikit-learn xgboost lightgbm catboost kagglehub
+
+# Run notebook
+jupyter notebook The_Project_Implementation.ipynb
+```
+
+> Dataset is auto-downloaded via `kagglehub` — no manual download needed.
+
+---
+
+## 🏛️ Conference & Publication
+
+| Detail | Info |
+|--------|------|
+| Conference | 4th Congress on Smart Computing Technologies (CSCT 2025) |
+| Venue | National Institute of Technology, Sikkim, India |
+| Dates | December 13–14, 2025 |
+| Paper ID | 872 |
+| Publisher | Springer |
+| Certificate | Presented by Mahamat Hanga Derio |
+
+---
+
+## 👤 Authors
+
+**Mahamat Hanga Derio** — M.Tech Data Science, Christ University, Bangalore
+**Chaitra P C** — Christ University, Bangalore
+**Dr. Sujatha Arun Kokatnoor** — Department of AIML & DS, Christ University, Bangalore
+
+🔗 [GitHub](https://github.com/Derio001) | [LRI Health Project](https://github.com/Derio001/lri-prediction-chad) | [GDP Intelligence Project](https://github.com/Derio001/exploratory-predictive-gdp-analysis)
+
+---
+
+*Part of ongoing research in applied machine learning for financial and development contexts.*
